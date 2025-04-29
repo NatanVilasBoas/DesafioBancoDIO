@@ -2,8 +2,8 @@ package com.desafiobancodio.banco;
 
 public class ContaPoupanca extends Conta {
 
-    public ContaPoupanca(Cliente cliente) {
-        super(cliente);
+    public ContaPoupanca(Cliente cliente, String pwd) {
+        super(cliente, pwd);
     }
 
     @Override

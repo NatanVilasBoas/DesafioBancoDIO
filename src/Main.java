@@ -5,17 +5,20 @@ import com.desafiobancodio.banco.ContaPoupanca;
 
 public class Main {
     public static void main(String[] args) {
-        Cliente venilton = new Cliente();
-        venilton.setNome("Venilton");
+        Cliente cliente = new Cliente("Natan", "email@email.com");
 
-        Conta cc = new ContaCorrente(venilton);
-        Conta poupanca = new ContaPoupanca(venilton);
+        Conta cc = new ContaCorrente(cliente, "senha123");
+        Conta poupanca = new ContaPoupanca(cliente, "senha456");
 
-        cc.depositar(100);
-        cc.transferir(100, poupanca);
+        cc.depositar(200);
+        cc.transferir(150, poupanca);
 
         cc.imprimirExtrato();
         poupanca.imprimirExtrato();
+
+        cc.changePassword("senha789");
+        cc.imprimirExtrato();
+
     }
 
 }
